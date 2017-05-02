@@ -1,4 +1,4 @@
-package com.ufidstudios.igt.gamestatus;
+package com.ufidstudios.igt.gamestatus.presenter;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
+
+import com.ufidstudios.igt.gamestatus.view.JackpotDetailFragment;
+import com.ufidstudios.igt.gamestatus.view.JackpotListActivity;
+import com.ufidstudios.igt.gamestatus.R;
 
 /**
  * An activity representing a single Jackpot detail screen. This

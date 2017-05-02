@@ -1,4 +1,4 @@
-package com.ufidstudios.igt.gamestatus;
+package com.ufidstudios.igt.gamestatus.view;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,7 +15,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-import com.ufidstudios.igt.gamestatus.dummy.DummyContent;
+import com.ufidstudios.igt.gamestatus.R;
+import com.ufidstudios.igt.gamestatus.model.Jackpot;
+import com.ufidstudios.igt.gamestatus.presenter.JackpotDetailActivity;
 
 import java.util.List;
 
@@ -67,15 +69,15 @@ public class JackpotListActivity extends AppCompatActivity {
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(DummyContent.ITEMS));
+        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(Jackpot.ITEMS));
     }
 
     public class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
-        private final List<DummyContent.DummyItem> mValues;
+        private final List<Jackpot.DummyItem> mValues;
 
-        public SimpleItemRecyclerViewAdapter(List<DummyContent.DummyItem> items) {
+        public SimpleItemRecyclerViewAdapter(List<Jackpot.DummyItem> items) {
             mValues = items;
         }
 
@@ -123,7 +125,7 @@ public class JackpotListActivity extends AppCompatActivity {
             public final View mView;
             public final TextView mIdView;
             public final TextView mContentView;
-            public DummyContent.DummyItem mItem;
+            public Jackpot.DummyItem mItem;
 
             public ViewHolder(View view) {
                 super(view);

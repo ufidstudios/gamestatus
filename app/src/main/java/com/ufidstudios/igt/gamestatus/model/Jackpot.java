@@ -1,4 +1,4 @@
-package com.ufidstudios.igt.gamestatus.dummy;
+package com.ufidstudios.igt.gamestatus.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ import java.util.Map;
  * <p>
  * TODO: Replace all uses of this class before publishing your app.
  */
-public class DummyContent {
+public class Jackpot {
 
     /**
      * An array of sample (dummy) items.
@@ -23,14 +23,8 @@ public class DummyContent {
      */
     public static final Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
 
-    private static final int COUNT = 25;
+    private static int mCount;
 
-    static {
-        // Add some sample items.
-        for (int i = 1; i <= COUNT; i++) {
-            addItem(createDummyItem(i));
-        }
-    }
 
     private static void addItem(DummyItem item) {
         ITEMS.add(item);

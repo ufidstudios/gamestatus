@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".JackpotListActivity"
+            android:name=".view.JackpotListActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -20,13 +20,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".JackpotDetailActivity"
+            android:name=".presenter.JackpotDetailActivity"
             android:label="@string/title_jackpot_detail"
-            android:parentActivityName=".JackpotListActivity"
+            android:parentActivityName=".view.JackpotListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ufidstudios.igt.gamestatus.JackpotListActivity" />
+                android:value="com.ufidstudios.igt.gamestatus.view.JackpotListActivity" />
         </activity>
     </application>
 
