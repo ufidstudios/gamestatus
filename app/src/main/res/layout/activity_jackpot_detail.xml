@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.ufidstudios.igt.gamestatus.presenter.JackpotDetailActivity"
+    tools:context="com.ufidstudios.igt.gamestatus.view.JackpotDetailActivity"
     tools:ignore="MergeRootFrame">
 
     <android.support.design.widget.AppBarLayout

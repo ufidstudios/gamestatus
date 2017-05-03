@@ -10,11 +10,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.ufidstudios.igt.gamestatus.R;
-import com.ufidstudios.igt.gamestatus.model.Jackpot;
-import com.ufidstudios.igt.gamestatus.presenter.JackpotDetailActivity;
+import com.ufidstudios.igt.gamestatus.model.GameInfoCollection;
 
 /**
- * A fragment representing a single Jackpot detail screen.
+ * A fragment representing a single GameInfoCollection detail screen.
  * This fragment is either contained in a {@link JackpotListActivity}
  * in two-pane mode (on tablets) or a {@link JackpotDetailActivity}
  * on handsets.
@@ -29,7 +28,7 @@ public class JackpotDetailFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-    private Jackpot.DummyItem mItem;
+    private GameInfoCollection.DummyItem mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -46,7 +45,7 @@ public class JackpotDetailFragment extends Fragment {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
-            mItem = Jackpot.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+            mItem = GameInfoCollection.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
 
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);

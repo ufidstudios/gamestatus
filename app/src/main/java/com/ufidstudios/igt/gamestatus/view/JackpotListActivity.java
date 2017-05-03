@@ -7,8 +7,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +14,7 @@ import android.widget.TextView;
 
 
 import com.ufidstudios.igt.gamestatus.R;
-import com.ufidstudios.igt.gamestatus.model.Jackpot;
-import com.ufidstudios.igt.gamestatus.presenter.JackpotDetailActivity;
+import com.ufidstudios.igt.gamestatus.model.GameInfoCollection;
 
 import java.util.List;
 
@@ -46,6 +43,7 @@ public class JackpotListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
+        /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +51,7 @@ public class JackpotListActivity extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
 
         View recyclerView = findViewById(R.id.jackpot_list);
         assert recyclerView != null;
@@ -69,15 +67,15 @@ public class JackpotListActivity extends AppCompatActivity {
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(Jackpot.ITEMS));
+        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(GameInfoCollection.ITEMS));
     }
 
     public class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
-        private final List<Jackpot.DummyItem> mValues;
+        private final List<GameInfoCollection.DummyItem> mValues;
 
-        public SimpleItemRecyclerViewAdapter(List<Jackpot.DummyItem> items) {
+        public SimpleItemRecyclerViewAdapter(List<GameInfoCollection.DummyItem> items) {
             mValues = items;
         }
 
@@ -125,7 +123,7 @@ public class JackpotListActivity extends AppCompatActivity {
             public final View mView;
             public final TextView mIdView;
             public final TextView mContentView;
-            public Jackpot.DummyItem mItem;
+            public GameInfoCollection.DummyItem mItem;
 
             public ViewHolder(View view) {
                 super(view);

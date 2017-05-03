@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".presenter.JackpotDetailActivity"
+            android:name=".view.JackpotDetailActivity"
             android:label="@string/title_jackpot_detail"
             android:parentActivityName=".view.JackpotListActivity"
             android:theme="@style/AppTheme.NoActionBar">
