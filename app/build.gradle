@@ -18,6 +18,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
     }
 }
 
@@ -31,6 +35,8 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.google.code.gson:gson:2.2.4'
+    compile 'org.joda:joda-money:0.12'
+    compile group: 'joda-time', name: 'joda-time', version: '2.8.1'
 
     compile 'com.google.dagger:dagger:2.4'
     annotationProcessor "com.google.dagger:dagger-compiler:2.4"
