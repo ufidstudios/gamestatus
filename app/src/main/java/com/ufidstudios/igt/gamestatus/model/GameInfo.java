@@ -10,39 +10,54 @@
 public class GameInfo implements Serializable
 {
 
-    @SerializedName("name")
+    @SerializedName("mName")
     @Expose
-    private String name;
-    @SerializedName("jackpot")
+    private String mName;
+
+    @SerializedName("mJackpot")
     @Expose
-    private Integer jackpot;
-    @SerializedName("date")
+    private Integer mJackpot;
+
+    @SerializedName("mDate")
     @Expose
-    private String date;
+    private String mDate;
+
+    public String getId() {
+        return mId;
+    }
+
+    public void setId(String mId) {
+        this.mId = mId;
+    }
+
+    @SerializedName("mId")
+    @Expose
+    private String mId;
+
     private final static long serialVersionUID = 976399103785456166L;
 
     public String getName() {
-        return name;
+        return mName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String mName) {
+        this.mName = mName;
     }
 
     public Integer getJackpot() {
-        return jackpot;
+        return mJackpot;
     }
 
     public void setJackpot(Integer jackpot) {
-        this.jackpot = jackpot;
+        this.mJackpot = jackpot;
     }
 
     public String getDate() {
-        return date;
+        return mDate;
     }
 
     public void setDate(String date) {
-        this.date = date;
+        this.mDate = date;
     }
 
     @Override
@@ -52,8 +67,19 @@ public class GameInfo implements Serializable
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(name).append(jackpot).append(date).toHashCode();
+        return new HashCodeBuilder().append(mName).append(mJackpot).append(mDate).toHashCode();
     }
+
+    /**
+     *
+     * @param position Expects int, position in collection
+     * @param title Expects mName of game
+     * @param details Expects mJackpot, mDate, and score delimited by a comma.
+     */
+    public GameInfo(String position,String title,String details) {
+        //TODO - construct GameInfo object
+    }
+
 
     @Override
     public boolean equals(Object other) {
@@ -64,7 +90,7 @@ public class GameInfo implements Serializable
             return false;
         }
         GameInfo rhs = ((GameInfo) other);
-        return new EqualsBuilder().append(name, rhs.name).append(jackpot, rhs.jackpot).append(date, rhs.date).isEquals();
+        return new EqualsBuilder().append(mName, rhs.mName).append(mJackpot, rhs.mJackpot).append(mDate, rhs.mDate).isEquals();
     }
 
 }

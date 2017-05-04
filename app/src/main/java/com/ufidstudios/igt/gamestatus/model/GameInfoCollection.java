@@ -16,23 +16,23 @@ public class GameInfoCollection {
     /**
      * An array of sample (dummy) items.
      */
-    public static final List<DummyItem> ITEMS = new ArrayList<DummyItem>();
+    public static final List<GameInfo> ITEMS = new ArrayList<GameInfo>();
 
     /**
      * A map of sample (dummy) items, by ID.
      */
-    public static final Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
+    public static final Map<String, GameInfo> ITEM_MAP = new HashMap<String, GameInfo>();
 
     private static int mCount;
 
 
-    private static void addItem(DummyItem item) {
+    private static void addItem(GameInfo item) {
         ITEMS.add(item);
-        ITEM_MAP.put(item.id, item);
+        ITEM_MAP.put(item.getId(), item);
     }
 
-    private static DummyItem createDummyItem(int position) {
-        return new DummyItem(String.valueOf(position), "Item " + position, makeDetails(position));
+    private static GameInfo createGameInfo(int position) {
+        return new GameInfo(String.valueOf(position), "Item " + position, makeDetails(position));
     }
 
     private static String makeDetails(int position) {

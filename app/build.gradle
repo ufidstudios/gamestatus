@@ -30,6 +30,7 @@ dependencies {
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.android.support:recyclerview-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
+    compile 'com.google.code.gson:gson:2.2.4'
 
     // Required if generating equals, hashCode, or toString methods
     compile 'commons-lang:commons-lang:2.6'
