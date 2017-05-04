@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 
 import com.ufidstudios.igt.gamestatus.R;
+import com.ufidstudios.igt.gamestatus.model.GameInfo;
 import com.ufidstudios.igt.gamestatus.model.GameInfoCollection;
 
 import java.util.List;
@@ -73,9 +74,9 @@ public class JackpotListActivity extends AppCompatActivity {
     public class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
-        private final List<GameInfoCollection.DummyItem> mValues;
+        private final List<GameInfo> mValues;
 
-        public SimpleItemRecyclerViewAdapter(List<GameInfoCollection.DummyItem> items) {
+        public SimpleItemRecyclerViewAdapter(List<GameInfo> items) {
             mValues = items;
         }
 
@@ -89,15 +90,15 @@ public class JackpotListActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
             holder.mItem = mValues.get(position);
-            holder.mIdView.setText(mValues.get(position).id);
-            holder.mContentView.setText(mValues.get(position).content);
+            holder.mIdView.setText(mValues.get(position).getName());
+            holder.mContentView.setText(mValues.get(position).getJackpot());
 
             holder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (mTwoPane) {
                         Bundle arguments = new Bundle();
-                        arguments.putString(JackpotDetailFragment.ARG_ITEM_ID, holder.mItem.id);
+                        arguments.putString(JackpotDetailFragment.ARG_ITEM_ID, holder.mItem.getId());
                         JackpotDetailFragment fragment = new JackpotDetailFragment();
                         fragment.setArguments(arguments);
                         getSupportFragmentManager().beginTransaction()
@@ -106,7 +107,7 @@ public class JackpotListActivity extends AppCompatActivity {
                     } else {
                         Context context = v.getContext();
                         Intent intent = new Intent(context, JackpotDetailActivity.class);
-                        intent.putExtra(JackpotDetailFragment.ARG_ITEM_ID, holder.mItem.id);
+                        intent.putExtra(JackpotDetailFragment.ARG_ITEM_ID, holder.mItem.getId());
 
                         context.startActivity(intent);
                     }
@@ -123,7 +124,7 @@ public class JackpotListActivity extends AppCompatActivity {
             public final View mView;
             public final TextView mIdView;
             public final TextView mContentView;
-            public GameInfoCollection.DummyItem mItem;
+            public GameInfo mItem;
 
             public ViewHolder(View view) {
                 super(view);

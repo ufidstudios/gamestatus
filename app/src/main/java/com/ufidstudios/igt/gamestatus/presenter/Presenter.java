@@ -1,7 +1,7 @@
 package com.ufidstudios.igt.gamestatus.presenter;
 
 /**
- * Created by User on 5/4/2017.
+ * Created by Alias Cummins on 3/4/2017.
  */
 
 class Presenter {

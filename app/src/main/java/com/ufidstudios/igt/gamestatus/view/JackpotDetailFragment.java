@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.ufidstudios.igt.gamestatus.R;
+import com.ufidstudios.igt.gamestatus.model.GameInfo;
 import com.ufidstudios.igt.gamestatus.model.GameInfoCollection;
 
 /**
@@ -28,7 +29,7 @@ public class JackpotDetailFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-    private GameInfoCollection.DummyItem mItem;
+    private GameInfo mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -50,7 +51,7 @@ public class JackpotDetailFragment extends Fragment {
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
             if (appBarLayout != null) {
-                appBarLayout.setTitle(mItem.content);
+                appBarLayout.setTitle(mItem.getName());
             }
         }
     }
@@ -62,7 +63,7 @@ public class JackpotDetailFragment extends Fragment {
 
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.jackpot_detail)).setText(mItem.details);
+            ((TextView) rootView.findViewById(R.id.jackpot_detail)).setText(mItem.getJackpot());
         }
 
         return rootView;
