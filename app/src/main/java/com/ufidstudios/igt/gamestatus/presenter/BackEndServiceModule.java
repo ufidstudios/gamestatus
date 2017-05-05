@@ -1,19 +1,23 @@
 package com.ufidstudios.igt.gamestatus.presenter;
 
+import javax.inject.Named;
+
+import dagger.Provides;
+
 /**
- * Created by User on 5/5/2017.
+ * Created by Alias Cummins on 5/5/2017.
  */
 
 public class BackEndServiceModule {
     @Provides
-    @Named("gameDateUrl")
-    String provideServerUrl() {
-        return "http://www.vogella.com";
+    @Named("gameDataUrl")
+    String provideGameDataUrl() {
+        return "https://dl.dropboxusercontent.com/s/2ewt6r22zo4qwgx/gameData.json";
     }
 
     @Provides
-    @Named("")
-    String provideAnotherUrl() {
-        return "http://www.google.com";
+    @Named("playerInfoUrl")
+    String providePlayerInfoUrl() {
+        return "https://dl.dropboxusercontent.com/s/5zz3hibrxpspoe5/playerInfo.json";
     }
 }
