@@ -1,20 +1,12 @@
-package com.vogella.android.dagger2simple;
-
+package com.ufidstudios.igt.gamestatus.model;
 import javax.inject.Inject;
+import com.ufidstudios.igt.gamestatus.presenter.BackEndServiceModule;
 
-public class NetworkApi {
+public class BackEndApi {
+
 
     @Inject
-    public NetworkApi(){
+    public BackEndApi(){
     }
 
-    public boolean validateUser(String username, String password) {
-        // imagine an actual network call here
-        // for demo purpose return false in "real" life
-        if (username == null || username.length() == 0) {
-            return false;
-        } else {
-            return true;
-        }
-    }
 }
