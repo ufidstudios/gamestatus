@@ -3,6 +3,7 @@
     package="com.ufidstudios.igt.gamestatus">
 
     <application
+        android:name=".app.GameDataApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

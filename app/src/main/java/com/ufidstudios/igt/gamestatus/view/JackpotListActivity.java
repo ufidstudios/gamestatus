@@ -1,5 +1,6 @@
 package com.ufidstudios.igt.gamestatus.view;
 
+import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,8 +15,8 @@ import android.widget.TextView;
 
 
 import com.ufidstudios.igt.gamestatus.R;
-import com.ufidstudios.igt.gamestatus.model.GameInfo;
-import com.ufidstudios.igt.gamestatus.model.GameInfoCollection;
+import com.ufidstudios.igt.gamestatus.model.GameData;
+import com.ufidstudios.igt.gamestatus.model.GameDataCollection;
 
 import java.util.List;
 
@@ -44,6 +45,8 @@ public class JackpotListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
+
+
         /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -68,15 +71,15 @@ public class JackpotListActivity extends AppCompatActivity {
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(GameInfoCollection.ITEMS));
+        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(GameDataCollection.ITEMS));
     }
 
     public class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
-        private final List<GameInfo> mValues;
+        private final List<GameData> mValues;
 
-        public SimpleItemRecyclerViewAdapter(List<GameInfo> items) {
+        public SimpleItemRecyclerViewAdapter(List<GameData> items) {
             mValues = items;
         }
 
@@ -124,7 +127,7 @@ public class JackpotListActivity extends AppCompatActivity {
             public final View mView;
             public final TextView mIdView;
             public final TextView mContentView;
-            public GameInfo mItem;
+            public GameData mItem;
 
             public ViewHolder(View view) {
                 super(view);

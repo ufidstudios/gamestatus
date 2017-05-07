@@ -11,28 +11,28 @@ import java.util.Map;
  * <p>
  * TODO: Replace all uses of this class before publishing your app.
  */
-public class GameInfoCollection {
+public class GameDataCollection {
 
     /**
      * An array of sample (dummy) items.
      */
-    public static final List<GameInfo> ITEMS = new ArrayList<GameInfo>();
+    public static final List<GameData> ITEMS = new ArrayList<GameData>();
 
     /**
      * A map of sample (dummy) items, by ID.
      */
-    public static final Map<String, GameInfo> ITEM_MAP = new HashMap<String, GameInfo>();
+    public static final Map<String, GameData> ITEM_MAP = new HashMap<String, GameData>();
 
     private static int mCount;
 
 
-    private static void addItem(GameInfo item) {
+    private static void addItem(GameData item) {
         ITEMS.add(item);
         ITEM_MAP.put(item.getId(), item);
     }
 
-    private static GameInfo createGameInfo(int position) {
-        return new GameInfo(String.valueOf(position), "Item " + position, makeDetails(position));
+    private static GameData createGameInfo(int position) {
+        return new GameData(String.valueOf(position), "Item " + position, makeDetails(position));
     }
 
     private static String makeDetails(int position) {

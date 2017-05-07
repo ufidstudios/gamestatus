@@ -1,6 +1,7 @@
 package com.ufidstudios.igt.gamestatus.presenter;
 
 
+import com.ufidstudios.igt.gamestatus.app.GameDataApplication;
 import com.ufidstudios.igt.gamestatus.model.BackEndApi;
 
 import javax.inject.Inject;

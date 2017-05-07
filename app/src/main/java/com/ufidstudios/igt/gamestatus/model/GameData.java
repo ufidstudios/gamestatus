@@ -7,7 +7,7 @@
     import org.apache.commons.lang.builder.HashCodeBuilder;
     import org.apache.commons.lang.builder.ToStringBuilder;
 
-public class GameInfo implements Serializable
+public class GameData implements Serializable
 {
 
     @SerializedName("mName")
@@ -76,8 +76,8 @@ public class GameInfo implements Serializable
      * @param title Expects mName of game
      * @param details Expects mJackpot, mDate, and score delimited by a comma.
      */
-    public GameInfo(String position,String title,String details) {
-        //TODO - construct GameInfo object
+    public GameData(String position, String title, String details) {
+        //TODO - construct GameData object
     }
 
 
@@ -86,10 +86,10 @@ public class GameInfo implements Serializable
         if (other == this) {
             return true;
         }
-        if ((other instanceof GameInfo) == false) {
+        if ((other instanceof GameData) == false) {
             return false;
         }
-        GameInfo rhs = ((GameInfo) other);
+        GameData rhs = ((GameData) other);
         return new EqualsBuilder().append(mName, rhs.mName).append(mJackpot, rhs.mJackpot).append(mDate, rhs.mDate).isEquals();
     }
 
