@@ -14,7 +14,7 @@ class Presenter {
 
 
     @Inject
-    private BackEndApi mBackEndApi;
+    protected BackEndApi mBackEndApi;
 
 
 
