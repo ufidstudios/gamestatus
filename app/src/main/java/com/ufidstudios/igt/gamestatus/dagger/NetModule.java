@@ -14,6 +14,8 @@ import dagger.Module;
 import dagger.Provides;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by User on 5/7/2017.
@@ -56,9 +58,8 @@ public class NetModule {
     @Provides
     @Singleton
     OkHttpClient provideOkHttpClient(Cache cache) {
-        OkHttpClient client = new OkHttpClient();
-        client.setCache(cache);
-        return client;
+        OkHttpClient mClient = new OkHttpClient();
+        return mClient;
     }
 
     @Provides
@@ -71,3 +72,4 @@ public class NetModule {
                 .build();
         return retrofit;
     }
+}

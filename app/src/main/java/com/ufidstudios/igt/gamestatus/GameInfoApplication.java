@@ -4,8 +4,8 @@ import android.app.Application;
 
 import com.ufidstudios.igt.gamestatus.dagger.AppComponent;
 import com.ufidstudios.igt.gamestatus.dagger.AppModule;
+import com.ufidstudios.igt.gamestatus.dagger.DaggerAppComponent;
 
-import
 
 /**
  * Created by Alias on 5/7/2017.
