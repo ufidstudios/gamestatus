@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.ufidstudios.igt.gamestatus.network.RetrofitClient;
 
 import javax.inject.Singleton;
 
@@ -24,12 +25,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 @Module
 public class NetModule {
 
-    String mBaseUrl;
-
-    // Constructor needs one parameter to instantiate.
-    public NetModule(String baseUrl) {
-        this.mBaseUrl = baseUrl;
-    }
 
     // Dagger will only look for methods annotated with @Provides
     @Provides
@@ -64,12 +59,8 @@ public class NetModule {
 
     @Provides
     @Singleton
-    Retrofit provideRetrofit(Gson gson, OkHttpClient okHttpClient) {
-        Retrofit retrofit = new Retrofit.Builder()
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .baseUrl(mBaseUrl)
-                .client(okHttpClient)
-                .build();
+    Retrofit provideRetrofit(String baseUrl) {
+        Retrofit retrofit = RetrofitClient.getClient(baseUrl);
         return retrofit;
     }
 }

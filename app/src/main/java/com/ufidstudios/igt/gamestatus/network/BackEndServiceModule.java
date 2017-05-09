@@ -3,13 +3,10 @@ package com.ufidstudios.igt.gamestatus.network;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.ufidstudios.igt.gamestatus.app.Constants;
-import com.ufidstudios.igt.gamestatus.model.PlayerInfo;
-import com.ufidstudios.igt.gamestatus.presenter.BackEndServiceModule_ProvidePlayerInfoUrlFactory;
 
 import javax.inject.Named;
 
 import dagger.Module;
-import dagger.Provides;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -20,11 +17,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 @Module
 public class BackEndServiceModule {
 
-    @Named("PlayerInfoAdapter")
+    @Named("GsonBuilder")
     Gson gson = new GsonBuilder()
-            .registerTypeAdapterFactory(BackEndServiceModule_ProvidePlayerInfoUrlFactory.class, new BackEndServiceModule_ProvidePlayerInfoUrlFactory())
-            .build();
+            .registerTypeAdapterFactory( new GameDataAdaptorFactory())
+            .create();
 
+    @Named("Retrofit")
     Retrofit retrofit = new Retrofit.Builder().baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build();

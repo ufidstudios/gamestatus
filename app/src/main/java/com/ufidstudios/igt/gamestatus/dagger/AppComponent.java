@@ -7,14 +7,17 @@ import com.ufidstudios.igt.gamestatus.view.JackpotListActivity;
 import javax.inject.Singleton;
 
 import dagger.Component;
-
+import com.ufidstudios.igt.gamestatus.dagger.AppModule;
+import com.ufidstudios.igt.gamestatus.dagger.NetModule;
 /**
  * Created by Alias on 5/7/2017.
  */
 @Singleton
 @Component(modules = {AppModule.class})
+
 public interface AppComponent {
-    void inject(JackpotDetailActivity target);
+
+    JackpotDetailActivity inject(JackpotDetailActivity target);
     void inject(JackpotListActivity target);
     void inject(JackpotDetailFragment target);
 }

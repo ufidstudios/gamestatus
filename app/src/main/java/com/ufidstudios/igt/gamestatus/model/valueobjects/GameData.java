@@ -1,4 +1,4 @@
-   package com.ufidstudios.igt.gamestatus.model;
+   package com.ufidstudios.igt.gamestatus.model.valueobjects;
 
     import java.io.Serializable;
     import com.google.gson.annotations.Expose;
@@ -16,7 +16,7 @@ public class GameData implements Serializable
 
     @SerializedName("mJackpot")
     @Expose
-    private Integer mJackpot;
+    private Double mJackpot;
 
     @SerializedName("mDate")
     @Expose
@@ -44,11 +44,11 @@ public class GameData implements Serializable
         this.mName = mName;
     }
 
-    public Integer getJackpot() {
+    public Double getJackpot() {
         return mJackpot;
     }
 
-    public void setJackpot(Integer jackpot) {
+    public void setJackpot(Double jackpot) {
         this.mJackpot = jackpot;
     }
 
@@ -70,16 +70,13 @@ public class GameData implements Serializable
         return new HashCodeBuilder().append(mName).append(mJackpot).append(mDate).toHashCode();
     }
 
-    /**
-     *
-     * @param position Expects int, position in collection
-     * @param title Expects mName of game
-     * @param details Expects mJackpot, mDate, and score delimited by a comma.
-     */
-    public GameData(String position, String title, String details) {
-        //TODO - construct GameData object
-    }
 
+    public GameData() {
+        this.mName = "Loading...";
+        this.mDate = "Loading...";
+        this.mId = getDate().toString();
+        this.mJackpot = 0.0;
+    }
 
     @Override
     public boolean equals(Object other) {

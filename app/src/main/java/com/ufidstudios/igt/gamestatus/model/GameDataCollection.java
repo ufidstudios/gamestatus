@@ -1,5 +1,7 @@
 package com.ufidstudios.igt.gamestatus.model;
 
+import com.ufidstudios.igt.gamestatus.model.valueobjects.GameData;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -32,7 +34,7 @@ public class GameDataCollection {
     }
 
     private static GameData createGameInfo(int position) {
-        return new GameData(String.valueOf(position), "Item " + position, makeDetails(position));
+        return null;//new GameData(String.valueOf(position), "Item " + position, makeDetails(position));
     }
 
     private static String makeDetails(int position) {

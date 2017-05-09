@@ -10,8 +10,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.ufidstudios.igt.gamestatus.R;
-import com.ufidstudios.igt.gamestatus.model.GameData;
+import com.ufidstudios.igt.gamestatus.model.valueobjects.GameData;
 import com.ufidstudios.igt.gamestatus.model.GameDataCollection;
+import com.ufidstudios.igt.gamestatus.network.RetrofitClient;
+
+import javax.inject.Inject;
 
 /**
  * A fragment representing a single GameDataCollection detail screen.
@@ -25,6 +28,9 @@ public class JackpotDetailFragment extends Fragment {
      * represents.
      */
     public static final String ARG_ITEM_ID = "item_id";
+
+    @Inject RetrofitClient retrofit;
+
 
     /**
      * The dummy content this fragment is presenting.
@@ -54,6 +60,8 @@ public class JackpotDetailFragment extends Fragment {
                 appBarLayout.setTitle(mItem.getName());
             }
         }
+
+        retrofit.notify();
     }
 
     @Override
@@ -63,7 +71,7 @@ public class JackpotDetailFragment extends Fragment {
 
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.jackpot_detail)).setText(mItem.getJackpot());
+           // ((TextView) rootView.findViewById(R.id.jackpot_detail)).setText(mItems.getJackpot());
         }
 
         return rootView;

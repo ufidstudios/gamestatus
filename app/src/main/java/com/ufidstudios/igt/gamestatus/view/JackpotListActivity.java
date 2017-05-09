@@ -1,6 +1,5 @@
 package com.ufidstudios.igt.gamestatus.view;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,10 +14,14 @@ import android.widget.TextView;
 
 
 import com.ufidstudios.igt.gamestatus.R;
-import com.ufidstudios.igt.gamestatus.model.GameData;
+import com.ufidstudios.igt.gamestatus.app.GameDataApplication;
+import com.ufidstudios.igt.gamestatus.model.valueobjects.GameData;
 import com.ufidstudios.igt.gamestatus.model.GameDataCollection;
+import com.ufidstudios.igt.gamestatus.network.RetrofitClient;
 
 import java.util.List;
+
+import javax.inject.Inject;
 
 /**
  * An activity representing a list of Jackpots. This activity
@@ -36,14 +39,19 @@ public class JackpotListActivity extends AppCompatActivity {
      */
     private boolean mTwoPane;
 
+    @Inject
+    RetrofitClient retrofitClient;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ((GameDataApplication)getApplication()).getAppComponent().inject(this);
         setContentView(R.layout.activity_jackpot_list);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
+
 
 
 
@@ -68,6 +76,8 @@ public class JackpotListActivity extends AppCompatActivity {
             // activity should be in two-pane mode.
             mTwoPane = true;
         }
+
+
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
@@ -94,7 +104,7 @@ public class JackpotListActivity extends AppCompatActivity {
         public void onBindViewHolder(final ViewHolder holder, int position) {
             holder.mItem = mValues.get(position);
             holder.mIdView.setText(mValues.get(position).getName());
-            holder.mContentView.setText(mValues.get(position).getJackpot());
+            holder.mContentView.setText(mValues.get(position).getJackpot().toString());
 
             holder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
