@@ -7,6 +7,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import retrofit2.Retrofit;
 
 /**
  * Created by User on 5/7/2017.
@@ -23,4 +24,5 @@ public class AppModule {
     public Context provideContext() {
         return mApplication;
     }
+
 }

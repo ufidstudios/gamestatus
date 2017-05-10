@@ -16,20 +16,17 @@ import dagger.Provides;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Created by User on 5/7/2017.
+ * Created by Alias on 5/7/2017.
  */
 
 @Module
 public class NetModule {
 
-
     // Dagger will only look for methods annotated with @Provides
     @Provides
     @Singleton
-    // Application reference must come from AppModule.class
     SharedPreferences providesSharedPreferences(Application application) {
         return PreferenceManager.getDefaultSharedPreferences(application);
     }

@@ -2,6 +2,7 @@ package com.ufidstudios.igt.gamestatus.view;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
+import com.google.gson.Gson;
 import com.ufidstudios.igt.gamestatus.R;
 import com.ufidstudios.igt.gamestatus.app.GameDataApplication;
 import com.ufidstudios.igt.gamestatus.model.valueobjects.GameData;
@@ -22,6 +24,9 @@ import com.ufidstudios.igt.gamestatus.network.RetrofitClient;
 import java.util.List;
 
 import javax.inject.Inject;
+
+import okhttp3.Cache;
+import retrofit2.Retrofit;
 
 /**
  * An activity representing a list of Jackpots. This activity
@@ -40,7 +45,19 @@ public class JackpotListActivity extends AppCompatActivity {
     private boolean mTwoPane;
 
     @Inject
-    RetrofitClient retrofitClient;
+    Retrofit retrofit;
+
+    @Inject
+    Cache cache;
+
+    @Inject
+    Context context;
+
+    @Inject
+    Gson gson;
+
+    @Inject
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
